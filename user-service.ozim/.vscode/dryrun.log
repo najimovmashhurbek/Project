@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/mashhurbek/go/src/github.com/najimovmashhurbek/Project/user-service.ozim'
+CGO_ENABLED=0 GOOS=linux go build -mod=vendor -a -installsuffix cgo -o /home/mashhurbek/go/src/github.com/najimovmashhurbek/Project/user-service.ozim/bin/ /main.go
+make: Leaving directory '/home/mashhurbek/go/src/github.com/najimovmashhurbek/Project/user-service.ozim'
+ 

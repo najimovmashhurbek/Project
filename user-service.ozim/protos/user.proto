@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package user;
+import "post.proto";
+service userService {
+    rpc CreateUser(User) returns (CreatePostRes);
+    rpc DeleteUser(DeleteById) returns (DeleteUserRes);
+    rpc UpdateUser(User) returns (UpdateUserRes);
+    rpc GetAllUser(GetAllById) returns (User);
+    rpc ListUsers(GetUsersReq) returns (GetUsersRes);
+}
+
+message GetUsersReq{
+    int64 limit=1;
+    int64 page=2;
+}
+message GetUsersRes{
+    repeated User users=1;
+    int64 count=2;
+}
+message CreatePostRes{
+    bool status=1;
+}
+message DeleteUserRes{
+    bool status=1;
+}
+message UpdateUserRes{
+    bool status=1;
+}
+message User {
+    string id = 1;
+    string name = 2;
+    string firstName = 3;
+    string lastName =4;
+    string bio=6;
+    repeated string phoneNumbers=7;
+    string status=8;
+    string createdAt = 9;
+    string updateAt =10;
+    string deletedAt =11;
+    repeated Adress adress=12;
+    repeated Post post =13;
+}
+message User1{
+    repeated User users=1;
+}
+
+ message Adress{
+     string id=1;
+     string user_id =2;
+     string country =3;
+     string city =4;
+     string district =5;
+     int64 postalCodes=6;
+}
+message DeleteById{
+    string id=1;
+}
+message GetAllById{
+    string id=1;
+}
